@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎭 头脑风暴智能体</title>
+    <link rel="stylesheet" href="/web/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>🎭 头脑风暴智能体</h1>
+            <p class="subtitle">基于六顶思考帽的 Multi-Agent 辩证推理系统</p>
+        </header>
+
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- 聊天区域 -->
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <h2>欢迎使用头脑风暴智能体！</h2>
+                        <p>请输入你想要深入分析的问题，我将通过 6 个不同角色的辩论为你提供全面视角。</p>
+                        <div class="example-questions">
+                            <p><strong>示例问题：</strong></p>
+                            <ul>
+                                <li>是否应该学习 AI Agent 开发？</li>
+                                <li>是否应该跳槽到创业公司？</li>
+                                <li>如何平衡工作与生活？</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 输入区域 -->
+                <div class="input-area">
+                    <textarea 
+                        id="userInput" 
+                        placeholder="输入你的问题..." 
+                        rows="3"
+                    ></textarea>
+                    <button id="sendBtn" onclick="startBrainstorm()">
+                        🚀 开始头脑风暴
+                    </button>
+                </div>
+            </div>
+
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>🎯 六顶思考帽</h3>
+                    <div class="roles-list">
+                        <div class="role-item white">
+                            <span class="role-color">⚪</span>
+                            <span class="role-name">白帽</span>
+                            <span class="role-desc">事实数据</span>
+                        </div>
+                        <div class="role-item red">
+                            <span class="role-color">🔴</span>
+                            <span class="role-name">红帽</span>
+                            <span class="role-desc">情感直觉</span>
+                        </div>
+                        <div class="role-item black">
+                            <span class="role-color">⚫</span>
+                            <span class="role-name">黑帽</span>
+                            <span class="role-desc">批判风险</span>
+                        </div>
+                        <div class="role-item yellow">
+                            <span class="role-color">🟡</span>
+                            <span class="role-name">黄帽</span>
+                            <span class="role-desc">乐观积极</span>
+                        </div>
+                        <div class="role-item green">
+                            <span class="role-color">🟢</span>
+                            <span class="role-name">绿帽</span>
+                            <span class="role-desc">创新思维</span>
+                        </div>
+                        <div class="role-item purple">
+                            <span class="role-color">🟣</span>
+                            <span class="role-name">紫帽</span>
+                            <span class="role-desc">全局视角</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>📊 辩论流程</h3>
+                    <div class="process-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <span class="step-desc">协调者分析问题类型</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <span class="step-desc">Round 1: 独立思考</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <span class="step-desc">Round 2: 交叉辩驳</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <span class="step-desc">汇总生成综合报告</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>ℹ️ 状态</h3>
+                    <div id="statusPanel" class="status-panel">
+                        <p>就绪</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="/web/js/app.js"></script>
+</body>
+</html>

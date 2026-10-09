@@ -1,0 +1,347 @@
+/* CSS 变量 - 主题色 */
+:root {
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    
+    /* 六顶思考帽颜色 */
+    --white-hat: #f1f5f9;
+    --red-hat: #fecaca;
+    --black-hat: #cbd5e1;
+    --yellow-hat: #fef08a;
+    --green-hat: #bbf7d0;
+    --purple-hat: #e9d5ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 头部样式 */
+.header {
+    text-align: center;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow);
+}
+
+.header h1 {
+    font-size: 1.2em;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-size: 0.8em;
+    opacity: 0.9;
+}
+
+/* 主内容区 */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+}
+
+/* 聊天容器 */
+.chat-container {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 140px);
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.welcome-message h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.example-questions {
+    margin-top: 30px;
+    text-align: left;
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.example-questions ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.example-questions li {
+    margin: 8px 0;
+    color: var(--text-secondary);
+}
+
+/* 输入区域 */
+.input-area {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 10px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    resize: none;
+    font-family: inherit;
+}
+
+#userInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#sendBtn {
+    padding: 12px 24px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#sendBtn:hover {
+    background: var(--primary-hover);
+}
+
+#sendBtn:disabled {
+    background: var(--text-secondary);
+    cursor: not-allowed;
+}
+
+/* 侧边栏 */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-section {
+    background: var(--card-bg);
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.sidebar-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+/* 角色列表 */
+.roles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.role-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    font-size: 0.85em;
+}
+
+.role-item:hover {
+    transform: translateX(5px);
+}
+
+.role-item.white { background: var(--white-hat); }
+.role-item.red { background: var(--red-hat); }
+.role-item.black { background: var(--black-hat); }
+.role-item.yellow { background: var(--yellow-hat); }
+.role-item.green { background: var(--green-hat); }
+.role-item.purple { background: var(--purple-hat); }
+
+.role-color {
+    font-size: 1em;
+}
+
+.role-name {
+    font-weight: bold;
+    min-width: 40px;
+}
+
+.role-desc {
+    font-size: 0.8em;
+    color: var(--text-secondary);
+}
+
+/* 流程步骤 */
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step-desc {
+    font-size: 0.95em;
+}
+
+/* 状态面板 */
+.status-panel {
+    padding: 15px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.status-panel p {
+    color: var(--text-secondary);
+}
+
+/* 消息气泡 */
+.message {
+    margin-bottom: 12px;
+    animation: fadeIn 0.3s ease-in;
+    line-height: 1.4;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-header {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.message-content {
+    background: var(--bg-color);
+    padding: 12px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+/* 加载动画 */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.typing-dots span {
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+    
+    .chat-container {
+        height: calc(100vh - 200px);
+    }
+}
